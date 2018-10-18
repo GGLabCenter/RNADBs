@@ -1,6 +1,4 @@
 
-!git clone https://github.com/GGLabCenter/RNADBs/
-!unzip RNADBs/download-dp-11068 -d data
 input_dotbrackets = []
 input_sequences = []
 input_ids = []
