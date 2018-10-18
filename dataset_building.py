@@ -147,3 +147,6 @@ for i, sequence in enumerate(input_dotbrackets):
         
 input_shape = input_x[0].shape
 output_shape = input_y[0,0,:].shape[0]
+
+x_train, x_test, y_train, y_test = train_test_split(input_x, input_y, shuffle=True, test_size=50)
+x_train, x_val, y_train, y_val = train_test_split(x_train, y_train, shuffle=True, test_size=0.20)
