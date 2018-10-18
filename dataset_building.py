@@ -1,5 +1,5 @@
 import os
-
+from random import shuffle
 
 input_dotbrackets = []
 input_sequences = []
