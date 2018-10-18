@@ -1,6 +1,6 @@
 import os
 from random import shuffle
-import np as np
+import numpy as np
 
 input_dotbrackets = []
 input_sequences = []
