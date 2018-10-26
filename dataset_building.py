@@ -132,9 +132,10 @@ for i, sequence in enumerate(input_sequences):
   for j, base in enumerate(sequence):
     index = base_to_idx_dict.get(base)
     input_x[i, j, index] = 1
-    if j == len(sequence)-1:
-      if j != max_len_sequence-1:
-        input_x[i, j+1:max_len_sequence, 0] = 1
+    # added the Masking Layer:
+    #if j == len(sequence)-1:
+    #if j != max_len_sequence-1:
+    #input_x[i, j+1:max_len_sequence, 0] = 1
         
 input_y = np.zeros((len(input_dotbrackets), max_len_db, len(db_to_idx)))
 
@@ -142,9 +143,10 @@ for i, sequence in enumerate(input_dotbrackets):
   for j, base in enumerate(sequence):
     index = db_to_idx_dict.get(base)
     input_y[i, j, index] = 1
-    if j == len(sequence)-1:
-      if j != max_len_db-1:
-        input_y[i, j+1:max_len_db, 0] = 1
+    # added the Masking Layer:
+    # if j == len(sequence)-1:
+    # if j != max_len_db-1:
+    # input_y[i, j+1:max_len_db, 0] = 1
         
 
 x_train, x_test, y_train, y_test = train_test_split(input_x, input_y, shuffle=True, test_size=50)
