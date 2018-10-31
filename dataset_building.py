@@ -39,8 +39,9 @@ for filename in input_list:
       splitteds = [s[i:i+n] for i in range(0, len(s), n)]
       splittedd = [d[i:i+n] for i in range(0, len(d), n)]
       for splittedt in zip(splitteds, splittedd):
-        input_sequences.append(splittedt[0]+'\n')
-        input_dotbrackets.append(splittedt[1]+'\n')
+        continue
+        # input_sequences.append(splittedt[0]+'\n')
+        # input_dotbrackets.append(splittedt[1]+'\n')
     else:
       input_sequences.append(s+'\n')
       input_dotbrackets.append(d+'\n')
