@@ -34,15 +34,15 @@ for filename in input_list:
   d = ''.join(dotbracket)
   
   if(len(s)<len_limit):
-    #if len(s)>200:
-    #  n = 200
-    #  splitteds = [s[i:i+n] for i in range(0, len(s), n)]
-    #  splittedd = [d[i:i+n] for i in range(0, len(d), n)]
-    #  for splittedt in zip(splitteds, splittedd):
-    #    continue
-        # input_sequences.append(splittedt[0]+'\n')
-        # input_dotbrackets.append(splittedt[1]+'\n')
-    #else:
+    if len(s)>200:
+      n = 200
+      splitteds = [s[i:i+n] for i in range(0, len(s), n)]
+      splittedd = [d[i:i+n] for i in range(0, len(d), n)]
+      for splittedt in splitteds:
+         input_sequences.append(splittedt+'\n')
+      for splittedt in splittedd:
+         input_dotbrackets.append(splittedt+'\n')    
+    else:
     input_sequences.append(s+'\n')
     input_dotbrackets.append(d+'\n')
     input_ids.append(filename)
