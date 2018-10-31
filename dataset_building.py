@@ -37,7 +37,7 @@ for filename in input_list:
     if len(s)>200:
       n = 200
       splitteds = [s[i:i+n] for i in range(0, len(s), n)]
-      splitteds = [d[i:i+n] for i in range(0, len(d), n)]
+      splittedd = [d[i:i+n] for i in range(0, len(d), n)]
       for split in zip(splitteds, splittedd):
         input_sequences.append(split[0]+'\n')
         input_dotbrackets.append(split[1]+'\n')
