@@ -43,9 +43,9 @@ for filename in input_list:
       for splittedt in splittedd:
          input_dotbrackets.append(splittedt+'\n')    
     else:
-    input_sequences.append(s+'\n')
-    input_dotbrackets.append(d+'\n')
-    input_ids.append(filename)
+      input_sequences.append(s+'\n')
+      input_dotbrackets.append(d+'\n')
+      input_ids.append(filename)
 
 token_index_seq = {}
 token_index_db = {}
