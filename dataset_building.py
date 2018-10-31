@@ -34,18 +34,9 @@ for filename in input_list:
   d = ''.join(dotbracket)
   
   if(len(s)<len_limit):
-    if len(s)>200:
-      n = 200
-      splitteds = [s[i:i+n] for i in range(0, len(s), n)]
-      splittedd = [d[i:i+n] for i in range(0, len(d), n)]
-      for splittedt in splitteds:
-        input_sequences.append(splittedt+'\n')
-      for splittedt in splittedd:
-        input_dotbrackets.append(splittedt+'\n')    
-    else:
-      input_sequences.append(s+'\n')
-      input_dotbrackets.append(d+'\n')
-      input_ids.append(filename)
+    input_sequences.append(s+'\n')
+    input_dotbrackets.append(d+'\n')
+    input_ids.append(filename)
 
 token_index_seq = {}
 token_index_db = {}
@@ -134,6 +125,23 @@ print()
 max_len_sequence
 print()
 max_len_db
+
+input_seq = []
+input_db = []
+n = 200
+for z in zip(input_sequences, input_dotbrackets):
+  if(len(z[0])> 200):
+    splitteds = [z[0][i:i+n] for i in range(0, len(z[0]), n)]
+    splittedd = [z[1][i:i+n] for i in range(0, len(z[1]), n)]
+    for splittedt in splitteds:
+      input_seq.append(splittedt+'\n')
+    for splittedt in splittedd:
+      input_db.append(splittedt+'\n') 
+  else:
+    input_seq.append(z[0]+'\n')
+    input_db.append(z[1]+'\n')
+input_sequences = input_seq
+input_dotbrackets = input_db
 
 input_x = np.zeros((len(input_sequences), max_len_sequence, len(base_to_idx)))
 
